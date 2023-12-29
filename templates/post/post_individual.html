@@ -2,6 +2,9 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load colaborador_tags %}
+
+<title>{% block title %}Vida Verde - Post{% endblock %}</title>
+
 {% block contenido %}
 
 <div class="container-fluid">
@@ -15,7 +18,7 @@
             <button class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#forms-collapse" aria-controls="forms-collapse"><strong>Contacto</strong></button>
             <ul class="list-unstyled ps-3 collapse" id="forms-collapse">
               <li><a class="d-inline-flex align-items-center rounded text-dark text-decoration-none   " href="{% url 'apps.contacto:contacto' %} ">Por mensaje</a></li>
-                 <li><a class="d-inline-flex align-items-center rounded  text-dark  text-decoration-none" target="_blank" href="https://www.facebook.com/profile.php?id=61555023901991">Facebook</a></li>
+                 <li><a class="d-inline-flex align-items-center rounded  text-dark  text-decoration-none" href="#disabled-forms">Facebook</a></li>
           <li><a class="d-inline-flex align-items-center rounded text-dark  text-decoration-none" href="#sizing">Instagram</a></li>
           <li><a class="d-inline-flex align-items-center rounded  text-dark text-decoration-none" href="#input-group">Whatsap</a></li>
 

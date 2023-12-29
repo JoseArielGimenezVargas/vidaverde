@@ -148,11 +148,12 @@ class ComentarioUpdateView(LoginRequiredMixin,UpdateView):
         else:
             return reverse('apps.posts:post_individual',args=[self.object.posts.id])
 
+from django.urls import reverse_lazy
+
 class ComentarioDeleteView(LoginRequiredMixin, DeleteView):
     model = Comentario
-  
     template_name = 'comentario/comentario_confirm_delete.html'
-
+    
     def get_success_url(self):
         messages.success(self.request, '¡Comentario eliminado con éxito!')
         next_url = self.request.GET.get('next')
@@ -160,6 +161,8 @@ class ComentarioDeleteView(LoginRequiredMixin, DeleteView):
             return next_url
         else:
             return reverse_lazy('apps.posts:post_individual', args=[self.object.posts.id])
+
+    
 class PostsPorCategoria(ListView):
     model = Post
     template_name = 'post/posts_por_categoria.html'
